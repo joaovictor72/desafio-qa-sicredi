@@ -12,7 +12,7 @@ Algumas observações encontradas:
 Documentação: Erro 409 com a mensagem "CPF já existente"
 Retornando: Erro 400 com a mensagem "CPF duplicado"
 
-# CONSULTAR SIMULAÇÃO
+# CONSULTAR UMA SIMULAÇÃO
 - Ao consultar uma simulação de um CPF com restrição, está retornando uma mensagem diferente da documentação:
 
 Documentação: "O CPF
