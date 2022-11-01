@@ -21,3 +21,16 @@ Documentação: "O CPF
 Retornando: "O CPF 97093236014 tem problema"
 
 
+# Dependências
+
+- RestAssured: https://mvnrepository.com/artifact/io.rest-assured/rest-assured
+- Junit: https://mvnrepository.com/artifact/junit/junit
+- TestNG: https://mvnrepository.com/artifact/org.testng/testng
+- Gson: https://mvnrepository.com/artifact/com.google.code.gson/gson
+- Jettison: https://mvnrepository.com/artifact/org.codehaus.jettison/jettison/1.5.1
+- Maven: https://maven.apache.org/download.cgi
+
+# Plugins
+
+- Java SDK 11: https://www.oracle.com/br/java/technologies/javase/jdk11-archive-downloads.html
+
