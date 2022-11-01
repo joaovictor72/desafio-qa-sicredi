@@ -1,4 +1,4 @@
-package alterar_simulacao;
+package steps;
 
 import base.Base;
 import jdk.jfr.Description;

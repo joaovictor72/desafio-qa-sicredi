@@ -1,4 +1,4 @@
-package consultar_simulacao;
+package steps;
 
 import base.Base;
 import io.restassured.response.Response;

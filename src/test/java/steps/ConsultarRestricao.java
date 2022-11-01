@@ -1,4 +1,4 @@
-package consultar_restricao;
+package steps;
 
 import base.Base;
 import io.restassured.http.ContentType;
