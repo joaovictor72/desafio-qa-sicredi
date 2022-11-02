@@ -6,7 +6,6 @@ import java.util.List;
 import java.util.Random;
 
 public class Pessoa {
-
     private Long id;
     private String cpf;
     private String nome;
@@ -95,6 +94,21 @@ public class Pessoa {
     public static String geraNome(){
         Faker faker = new Faker();
         return faker.name().firstName().replace("'", " ");
+    }
+
+    public static String geraEmail(){
+        Faker faker = new Faker();
+        return geraNome() + "@email.com";
+    }
+
+    public static Integer geraValor(){
+        Faker faker = new Faker();
+        return faker.number().numberBetween(1000,40000);
+    }
+
+    public static Integer geraParcelas(){
+        Faker faker = new Faker();
+        return Integer.valueOf(faker.number().numberBetween(2,48));
     }
 
     public static String buscaCPFcomRestricao() {

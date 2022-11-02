@@ -14,7 +14,7 @@ public class CriarSimulacao extends Base {
     @Description("Uma simulação cadastrada com sucesso retorna o HTTP Status 201")
     @Test
     public void criarSimulacao() {
-        Pessoa pessoa = new Pessoa(Pessoa.geraCPF(), Pessoa.geraNome(), "teste@teste.com", 2000, 30, true);
+        Pessoa pessoa = new Pessoa(Pessoa.geraCPF(), Pessoa.geraNome(), Pessoa.geraEmail(), Pessoa.geraValor(),Pessoa.geraParcelas(), true);
 
         Pessoa pessoaInserida = given()
                     .log().all()
@@ -28,16 +28,13 @@ public class CriarSimulacao extends Base {
                     .extract()
                     .body()
                     .as(Pessoa.class);
-//        assertEquals(statusCode, is("teste@teste.com"));
-        assertThat(pessoaInserida.getValor(), is(2000));
-        assertThat(pessoaInserida.getParcelas(), is(30));
         assertEquals(pessoaInserida.isSeguro(), true);
     }
 
     @Description("Simulação com CPF Null")
     @Test
     public void criarSimulacaoComCPFNull() {
-        Pessoa pessoa = new Pessoa(null, Pessoa.geraNome(), "teste@teste.com", 2000, 30, true);
+        Pessoa pessoa = new Pessoa(null, Pessoa.geraNome(), Pessoa.geraEmail(), Pessoa.geraValor(), Pessoa.geraParcelas(), true);
 
         Pessoa pessoaInserida = given()
                     .log().all()
@@ -56,7 +53,7 @@ public class CriarSimulacao extends Base {
     @Description("Simulação com Nome Null")
     @Test
     public void criarSimulacaoComNomeNull() {
-        Pessoa pessoa = new Pessoa(Pessoa.geraCPF(), null, "teste@teste.com", 2000, 30, true);
+        Pessoa pessoa = new Pessoa(Pessoa.geraCPF(), null, Pessoa.geraEmail(), Pessoa.geraValor(), Pessoa.geraParcelas(), true);
 
         Pessoa pessoaInserida = given()
                     .log().all()
@@ -76,7 +73,7 @@ public class CriarSimulacao extends Base {
     @Description("Simulação com Email Null")
     @Test
     public void criarSimulacaoComEmailNull() {
-        Pessoa pessoa = new Pessoa(Pessoa.geraCPF(), Pessoa.geraNome(), null, 2000, 30, true);
+        Pessoa pessoa = new Pessoa(Pessoa.geraCPF(), Pessoa.geraNome(), null, Pessoa.geraValor(), Pessoa.geraParcelas(), true);
 
         Pessoa pessoaInserida = given()
                     .log().all()
@@ -95,7 +92,7 @@ public class CriarSimulacao extends Base {
     @Description("Simulação com Valor Null")
     @Test
     public void criarSimulacaoComValorNull() {
-        Pessoa pessoa = new Pessoa(Pessoa.geraCPF(), Pessoa.geraNome(), "teste@teste.com", null, 30, true);
+        Pessoa pessoa = new Pessoa(Pessoa.geraCPF(), Pessoa.geraNome(), Pessoa.geraEmail(), null, Pessoa.geraParcelas(), true);
 
         Pessoa pessoaInserida = given()
                     .log().all()
@@ -114,7 +111,7 @@ public class CriarSimulacao extends Base {
     @Description("Simulação com Parcela Null")
     @Test
     public void criarSimulacaoComParcelaNull() {
-        Pessoa pessoa = new Pessoa(Pessoa.geraCPF(), Pessoa.geraNome(), "teste@teste.com", 2000, null, true);
+        Pessoa pessoa = new Pessoa(Pessoa.geraCPF(), Pessoa.geraNome(), Pessoa.geraEmail(), Pessoa.geraValor(), null, true);
 
         Pessoa pessoaInserida = given()
                     .log().all()
@@ -135,7 +132,7 @@ public class CriarSimulacao extends Base {
     @Description("Cadastro de CPF duplicado")
     @Test
     public void criarSimulacaoCPFexistente() {
-        Pessoa pessoa = new Pessoa("24094592008", Pessoa.geraNome(), "teste@teste.com", 2000, 30, true);
+        Pessoa pessoa = new Pessoa("17822386034", Pessoa.geraNome(), Pessoa.geraEmail(), Pessoa.geraValor(), Pessoa.geraParcelas(), true);
 
         Pessoa pessoaInserida = given()
                     .log().all()
