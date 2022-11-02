@@ -27,8 +27,9 @@ Retornando: "O CPF 97093236014 tem problema"
 - Junit: https://mvnrepository.com/artifact/junit/junit
 - TestNG: https://mvnrepository.com/artifact/org.testng/testng
 - Gson: https://mvnrepository.com/artifact/com.google.code.gson/gson
-- Jettison: https://mvnrepository.com/artifact/org.codehaus.jettison/jettison/1.5.1
+- Jettison: https://mvnrepository.com/artifact/org.codehaus.jettison/jettison
 - Maven: https://maven.apache.org/download.cgi
+- JavaFaker: https://mvnrepository.com/artifact/com.github.javafaker/javafaker
 
 # Plugins
 
