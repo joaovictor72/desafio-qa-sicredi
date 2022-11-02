@@ -15,24 +15,22 @@ public class AlterarSimulacao extends Base {
     @Description("Alteração realizada no nome e email")
     @Test
     public void alterarSimulacao() {
-        Pessoa pessoa = new Pessoa("24094592008", "Alterado!!", "teste@teste333.com", 2000, 30, true);
+        Pessoa pessoa = new Pessoa("17822386034", Pessoa.geraNome(), "teste@teste333.com", 2000, 30, true);
 
         Pessoa pessoaInserida = given()
                     .log().all()
                     .header("Content-Type", "application/json")
                     .body(pessoa)
                 .when()
-                    .put(BASE_URL_LOCAL + "/api/v1/simulacoes/24094592008")
+                    .put(BASE_URL_LOCAL + "/api/v1/simulacoes/17822386034")
                 .then()
                     .log().all()
                     .statusCode(200)
                     .extract()
                     .body()
                     .as(Pessoa.class);
-        assertThat(pessoaInserida.getCpf(),is("24094592008"));
-        assertThat(pessoaInserida.getNome(), is("Alterado!!"));
+        assertThat(pessoaInserida.getCpf(),is("17822386034"));
         assertThat(pessoaInserida.getEmail(), is("teste@teste333.com"));
-        assertThat(pessoaInserida.getValor(), is(2000));
         assertThat(pessoaInserida.getParcelas(), is(30));
         assertEquals(pessoaInserida.isSeguro(), true);
     }
@@ -40,8 +38,7 @@ public class AlterarSimulacao extends Base {
     @Description("Alterar Simulação de CPF não cadastrado no sistema")
     @Test
     public void alterarSimulacaoCPFnaoEncontrado() {
-        Pessoa pessoa = new Pessoa(Pessoa.geraCPF(), "Alterado!!", "teste@teste333.com", 2000, 30, true);
-
+        Pessoa pessoa = new Pessoa(Pessoa.geraCPF(), Pessoa.geraNome(), "teste@teste333.com", 2000, 30, true);
         Pessoa pessoaInserida = given()
                     .log().all()
                     .header("Content-Type", "application/json")

@@ -1,6 +1,6 @@
 package pojo;
 
-
+import com.github.javafaker.Faker;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
@@ -91,6 +91,12 @@ public class Pessoa {
             iniciais += numero.toString();
         }   return iniciais + calcDigVerif(iniciais);
     }
+
+    public static String geraNome(){
+        Faker faker = new Faker();
+        return faker.name().firstName().replace("'", " ");
+    }
+
     public static String buscaCPFcomRestricao() {
 
         List<String> cpfComRestricao =
