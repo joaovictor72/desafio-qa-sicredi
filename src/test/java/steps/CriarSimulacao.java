@@ -36,7 +36,7 @@ public class CriarSimulacao extends Base {
     public void criarSimulacaoComCPFNull() {
         Pessoa pessoa = new Pessoa(null, Pessoa.geraNome(), Pessoa.geraEmail(), Pessoa.geraValor(), Pessoa.geraParcelas(), true);
 
-        Pessoa pessoaInserida = given()
+        given()
                     .log().all()
                     .header("Content-Type", "application/json")
                 .body(pessoa)
@@ -55,7 +55,7 @@ public class CriarSimulacao extends Base {
     public void criarSimulacaoComNomeNull() {
         Pessoa pessoa = new Pessoa(Pessoa.geraCPF(), null, Pessoa.geraEmail(), Pessoa.geraValor(), Pessoa.geraParcelas(), true);
 
-        Pessoa pessoaInserida = given()
+        given()
                     .log().all()
                     .header("Content-Type", "application/json")
                     .body(pessoa)
@@ -75,7 +75,7 @@ public class CriarSimulacao extends Base {
     public void criarSimulacaoComEmailNull() {
         Pessoa pessoa = new Pessoa(Pessoa.geraCPF(), Pessoa.geraNome(), null, Pessoa.geraValor(), Pessoa.geraParcelas(), true);
 
-        Pessoa pessoaInserida = given()
+        given()
                     .log().all()
                     .header("Content-Type", "application/json")
                     .body(pessoa)
@@ -94,7 +94,7 @@ public class CriarSimulacao extends Base {
     public void criarSimulacaoComValorNull() {
         Pessoa pessoa = new Pessoa(Pessoa.geraCPF(), Pessoa.geraNome(), Pessoa.geraEmail(), null, Pessoa.geraParcelas(), true);
 
-        Pessoa pessoaInserida = given()
+        given()
                     .log().all()
                     .header("Content-Type", "application/json")
                     .body(pessoa)
@@ -113,7 +113,7 @@ public class CriarSimulacao extends Base {
     public void criarSimulacaoComParcelaNull() {
         Pessoa pessoa = new Pessoa(Pessoa.geraCPF(), Pessoa.geraNome(), Pessoa.geraEmail(), Pessoa.geraValor(), null, true);
 
-        Pessoa pessoaInserida = given()
+        given()
                     .log().all()
                     .header("Content-Type", "application/json")
                     .body(pessoa)
@@ -134,7 +134,7 @@ public class CriarSimulacao extends Base {
     public void criarSimulacaoCPFexistente() {
         Pessoa pessoa = new Pessoa("17822386034", Pessoa.geraNome(), Pessoa.geraEmail(), Pessoa.geraValor(), Pessoa.geraParcelas(), true);
 
-        Pessoa pessoaInserida = given()
+        given()
                     .log().all()
                     .header("Content-Type", "application/json")
                     .body(pessoa)
