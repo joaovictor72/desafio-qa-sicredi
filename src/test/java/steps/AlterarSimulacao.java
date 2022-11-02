@@ -2,6 +2,7 @@ package steps;
 
 import base.Base;
 import jdk.jfr.Description;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import pojo.Pessoa;
 
@@ -39,18 +40,17 @@ public class AlterarSimulacao extends Base {
     @Description("Alterar Simulação de CPF não cadastrado no sistema")
     @Test
     public void alterarSimulacaoCPFnaoEncontrado() {
-        Pessoa pessoa = new Pessoa("01317496094", "Alterado!!", "teste@teste333.com", 2000, 30, true);
+        Pessoa pessoa = new Pessoa(Pessoa.geraCPF(), "Alterado!!", "teste@teste333.com", 2000, 30, true);
 
         Pessoa pessoaInserida = given()
                     .log().all()
                     .header("Content-Type", "application/json")
                     .body(pessoa)
                 .when()
-                    .put(BASE_URL_LOCAL + "/api/v1/simulacoes/01317496094")
+                    .put(BASE_URL_LOCAL + "/api/v1/simulacoes/" + Pessoa.geraCPF())
                 .then()
                     .log().all()
                     .statusCode(404)
-                    .body("mensagem", is("CPF 01317496094 não encontrado"))
                     .extract()
                     .body()
                     .as(Pessoa.class);
