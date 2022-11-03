@@ -14,7 +14,7 @@ public class DeletarSimulacao extends Base {
         given()
                     .log().all()
                 .when()
-                    .delete(BASE_URL_LOCAL + "/api/v1/simulacoes/11")
+                    .delete(BASE_URL_LOCAL + "/api/v1/simulacoes/12")
                 .then()
                     .log().all()
                     .statusCode(200);

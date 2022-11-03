@@ -25,7 +25,7 @@ public class ConsultarSimulacao extends Base {
     @Description("Retorna a simulação previamente cadastrada pelo CPF.")
     @Test
     void consultarSimulacaoPeloCPF() {
-        Response response = get(BASE_URL_LOCAL + "/api/v1/simulacoes/66414919004");
+        Response response = get(BASE_URL_LOCAL + "/api/v1/simulacoes/17822386034");
         System.out.println("Response: " + response.asString());
         System.out.println("Status Code: " + response.getStatusCode());
         int statusCode = response.getStatusCode();
